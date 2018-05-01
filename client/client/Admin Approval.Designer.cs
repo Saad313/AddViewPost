@@ -38,10 +38,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lnkDetailView});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 40);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(310, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(423, 278);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lnkDetailView
             // 
@@ -54,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 330);
+            this.ClientSize = new System.Drawing.Size(447, 330);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Admin_Approval";
             this.Text = "Admin_Approval";
