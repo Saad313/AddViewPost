@@ -71,7 +71,6 @@ namespace server
                 {
                     return true;
                 }
-
             }
             return false;
         }
