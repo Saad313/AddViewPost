@@ -15,3 +15,9 @@ C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normnfkd.n
 C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
 C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.dll
 C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.pdb
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\bin\server.dll.config
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\bin\server.dll
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\bin\server.pdb
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\obj\Debug\server.dll
+C:\Users\Lenovo\Desktop\AddViewPost\server\server\obj\Debug\server.pdb

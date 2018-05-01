@@ -83,6 +83,7 @@ namespace server
             p.Description = description;
             postDL.postlist.Add(p);
 
+
             p.Title = "";
             p.Category = "";
             p.Description = "";
