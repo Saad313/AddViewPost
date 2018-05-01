@@ -24,7 +24,8 @@ namespace client
             if(e.ColumnIndex == 0)
             {
                 localhost.Post post = server.getpost(e.RowIndex, postidspecified);
-                
+                PostDetails pd = new PostDetails();
+                pd.Show();
             }
         }
 
@@ -35,6 +36,11 @@ namespace client
             bs.DataSource = server.getpostlist();
             dataGridView1.DataSource = bs;
 
+        }
+
+        private void Admin_Approval_Load(object sender, EventArgs e)
+        {
+            showPosts();
         }
     }
 }

@@ -59,6 +59,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Admin_Approval";
             this.Text = "Admin_Approval";
+            this.Load += new System.EventHandler(this.Admin_Approval_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

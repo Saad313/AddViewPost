@@ -51,7 +51,7 @@ namespace client
 
         private void lblregister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form R = new Form();
+            Registration R = new Registration();
             this.Hide();
             R.Show();
         }
