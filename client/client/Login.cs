@@ -33,8 +33,7 @@ namespace client
             }
             else if (adminvalid)
             {
-                MessageBox.Show("Welcome Admin");
-                
+                MessageBox.Show("Welcome Admin");  
             }
 
             else
