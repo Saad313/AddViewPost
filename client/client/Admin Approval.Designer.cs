@@ -28,19 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lnkDetailView = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lnkDetailView});
+            this.dataGridView1.Location = new System.Drawing.Point(22, 149);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(310, 150);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // lnkDetailView
+            // 
+            this.lnkDetailView.HeaderText = "Detail";
+            this.lnkDetailView.Name = "lnkDetailView";
+            this.lnkDetailView.Text = "Click here";
+            this.lnkDetailView.UseColumnTextForLinkValue = true;
             // 
             // Admin_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 330);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Admin_Approval";
             this.Text = "Admin_Approval";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewLinkColumn lnkDetailView;
     }
 }
