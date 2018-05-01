@@ -41,6 +41,14 @@ namespace client.localhost {
         
         private System.Threading.SendOrPostCallback isadminOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addpostOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getpostOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getpostlistOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback postingthepostOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -96,6 +104,18 @@ namespace client.localhost {
         
         /// <remarks/>
         public event isadminCompletedEventHandler isadminCompleted;
+        
+        /// <remarks/>
+        public event addpostCompletedEventHandler addpostCompleted;
+        
+        /// <remarks/>
+        public event getpostCompletedEventHandler getpostCompleted;
+        
+        /// <remarks/>
+        public event getpostlistCompletedEventHandler getpostlistCompleted;
+        
+        /// <remarks/>
+        public event postingthepostCompletedEventHandler postingthepostCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -284,6 +304,127 @@ namespace client.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addpost", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addpost([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string category, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string description) {
+            this.Invoke("addpost", new object[] {
+                        title,
+                        category,
+                        description});
+        }
+        
+        /// <remarks/>
+        public void addpostAsync(string title, string category, string description) {
+            this.addpostAsync(title, category, description, null);
+        }
+        
+        /// <remarks/>
+        public void addpostAsync(string title, string category, string description, object userState) {
+            if ((this.addpostOperationCompleted == null)) {
+                this.addpostOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddpostOperationCompleted);
+            }
+            this.InvokeAsync("addpost", new object[] {
+                        title,
+                        category,
+                        description}, this.addpostOperationCompleted, userState);
+        }
+        
+        private void OnaddpostOperationCompleted(object arg) {
+            if ((this.addpostCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addpostCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getpost", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Post getpost(int postID, [System.Xml.Serialization.XmlIgnoreAttribute()] bool postIDSpecified) {
+            object[] results = this.Invoke("getpost", new object[] {
+                        postID,
+                        postIDSpecified});
+            return ((Post)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getpostAsync(int postID, bool postIDSpecified) {
+            this.getpostAsync(postID, postIDSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void getpostAsync(int postID, bool postIDSpecified, object userState) {
+            if ((this.getpostOperationCompleted == null)) {
+                this.getpostOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetpostOperationCompleted);
+            }
+            this.InvokeAsync("getpost", new object[] {
+                        postID,
+                        postIDSpecified}, this.getpostOperationCompleted, userState);
+        }
+        
+        private void OngetpostOperationCompleted(object arg) {
+            if ((this.getpostCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getpostCompleted(this, new getpostCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getpostlist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/server")]
+        public Post[] getpostlist() {
+            object[] results = this.Invoke("getpostlist", new object[0]);
+            return ((Post[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getpostlistAsync() {
+            this.getpostlistAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getpostlistAsync(object userState) {
+            if ((this.getpostlistOperationCompleted == null)) {
+                this.getpostlistOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetpostlistOperationCompleted);
+            }
+            this.InvokeAsync("getpostlist", new object[0], this.getpostlistOperationCompleted, userState);
+        }
+        
+        private void OngetpostlistOperationCompleted(object arg) {
+            if ((this.getpostlistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getpostlistCompleted(this, new getpostlistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/postingthepost", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void postingthepost([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Post p) {
+            this.Invoke("postingthepost", new object[] {
+                        p});
+        }
+        
+        /// <remarks/>
+        public void postingthepostAsync(Post p) {
+            this.postingthepostAsync(p, null);
+        }
+        
+        /// <remarks/>
+        public void postingthepostAsync(Post p, object userState) {
+            if ((this.postingthepostOperationCompleted == null)) {
+                this.postingthepostOperationCompleted = new System.Threading.SendOrPostCallback(this.OnpostingthepostOperationCompleted);
+            }
+            this.InvokeAsync("postingthepost", new object[] {
+                        p}, this.postingthepostOperationCompleted, userState);
+        }
+        
+        private void OnpostingthepostOperationCompleted(object arg) {
+            if ((this.postingthepostCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.postingthepostCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -345,6 +486,79 @@ namespace client.localhost {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/server")]
+    public partial class Post {
+        
+        private bool approvalField;
+        
+        private bool approvalFieldSpecified;
+        
+        private string categoryField;
+        
+        private string descriptionField;
+        
+        private string titleField;
+        
+        /// <remarks/>
+        public bool Approval {
+            get {
+                return this.approvalField;
+            }
+            set {
+                this.approvalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ApprovalSpecified {
+            get {
+                return this.approvalFieldSpecified;
+            }
+            set {
+                this.approvalFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
             }
         }
     }
@@ -476,6 +690,66 @@ namespace client.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void addpostCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void getpostCompletedEventHandler(object sender, getpostCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getpostCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getpostCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Post Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Post)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void getpostlistCompletedEventHandler(object sender, getpostlistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getpostlistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getpostlistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Post[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Post[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void postingthepostCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

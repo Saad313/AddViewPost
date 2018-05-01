@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPost.Designer.cs">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Approval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Approval.Designer.cs">
+      <DependentUpon>Admin Approval.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPost.resx">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Approval.resx">
+      <DependentUpon>Admin Approval.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +110,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Web References\localhost\CompositeType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Post.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Reference.map">

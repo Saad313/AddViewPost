@@ -115,6 +115,7 @@
             this.Controls.Add(this.lblusername);
             this.Name = "Registration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

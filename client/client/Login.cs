@@ -28,12 +28,18 @@ namespace client
             server.isadmin(txtusername.Text, txtpassword.Text, out adminvalid, out adminisvalid);
             if (valid)
             {
-                MessageBox.Show("Welcome");
+                MessageBox.Show("Welcome User");
+                AddPost adpost = new AddPost();
+                this.Hide();
+                adpost.Show();
                 
             }
             else if (adminvalid)
             {
-                MessageBox.Show("Welcome Admin");  
+                MessageBox.Show("Welcome Admin");
+                Admin_Approval adpage = new Admin_Approval();
+                this.Hide();
+                adpage.Show();
             }
 
             else
@@ -41,6 +47,13 @@ namespace client
                 MessageBox.Show("User Not Found");
             }
 
+        }
+
+        private void lblregister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form R = new Form();
+            this.Hide();
+            R.Show();
         }
     }
 }

@@ -63,6 +63,7 @@
             this.lblregister.TabIndex = 2;
             this.lblregister.TabStop = true;
             this.lblregister.Text = "Register";
+            this.lblregister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblregister_LinkClicked);
             // 
             // cmdLogin
             // 

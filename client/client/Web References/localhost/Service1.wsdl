@@ -43,6 +43,30 @@
   <wsdl:message name="IService1_isadmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:isadminResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addpost_InputMessage">
+    <wsdl:part name="parameters" element="tns:addpost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addpost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addpostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getpost_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getpost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getpostlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpostlist" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getpostlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpostlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_postingthepost_InputMessage">
+    <wsdl:part name="parameters" element="tns:postingthepost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_postingthepost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:postingthepostResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -67,6 +91,22 @@
     <wsdl:operation name="isadmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/isadmin" message="tns:IService1_isadmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/isadminResponse" message="tns:IService1_isadmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addpost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addpost" message="tns:IService1_addpost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addpostResponse" message="tns:IService1_addpost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getpost" message="tns:IService1_getpost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getpostResponse" message="tns:IService1_getpost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpostlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getpostlist" message="tns:IService1_getpostlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getpostlistResponse" message="tns:IService1_getpostlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="postingthepost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/postingthepost" message="tns:IService1_postingthepost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/postingthepostResponse" message="tns:IService1_postingthepost_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -118,6 +158,42 @@
     </wsdl:operation>
     <wsdl:operation name="isadmin">
       <soap:operation soapAction="http://tempuri.org/IService1/isadmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpost">
+      <soap:operation soapAction="http://tempuri.org/IService1/addpost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpost">
+      <soap:operation soapAction="http://tempuri.org/IService1/getpost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpostlist">
+      <soap:operation soapAction="http://tempuri.org/IService1/getpostlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postingthepost">
+      <soap:operation soapAction="http://tempuri.org/IService1/postingthepost" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
