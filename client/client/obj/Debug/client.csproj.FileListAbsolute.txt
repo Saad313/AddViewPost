@@ -8,3 +8,6 @@ c:\users\lenovo\documents\visual studio 2015\Projects\client\client\obj\Debug\cl
 c:\users\lenovo\documents\visual studio 2015\Projects\client\client\obj\Debug\client.csproj.GenerateResource.Cache
 c:\users\lenovo\documents\visual studio 2015\Projects\client\client\obj\Debug\client.exe
 c:\users\lenovo\documents\visual studio 2015\Projects\client\client\obj\Debug\client.pdb
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\client\client\bin\Debug\client.exe.config
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\client\client\obj\Debug\client.exe
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\client\client\obj\Debug\client.pdb

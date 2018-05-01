@@ -50,5 +50,31 @@ namespace server
 
         }
 
+        public bool Login_user(string username, string password)
+        {
+            foreach (User u in Userdl.user)
+            {
+                if (u.Username == username && u.Password == password)
+                {
+                    return true;
+                    MyUtill.log = u;
+                }
+            }
+            return false;
+        }
+
+        public bool isadmin(string usernmae, string password)
+        {
+            foreach (admin a in admindl.admin)
+            {
+                if (a.Adminname == usernmae && a.Adminpassword == password)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
     }
 }

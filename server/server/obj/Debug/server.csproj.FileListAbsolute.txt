@@ -4,3 +4,14 @@ c:\users\lenovo\documents\visual studio 2015\Projects\server\server\bin\server.d
 c:\users\lenovo\documents\visual studio 2015\Projects\server\server\bin\server.pdb
 c:\users\lenovo\documents\visual studio 2015\Projects\server\server\obj\Debug\server.dll
 c:\users\lenovo\documents\visual studio 2015\Projects\server\server\obj\Debug\server.pdb
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\server.dll
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\server.pdb
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\mscorlib.dll
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normidna.nlp
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normnfc.nlp
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normnfd.nlp
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normnfkc.nlp
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\bin\normnfkd.nlp
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.dll
+C:\Users\Wajid Sahib\Desktop\New folder\AddViewPost\server\server\obj\Debug\server.pdb
