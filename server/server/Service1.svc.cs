@@ -75,5 +75,32 @@ namespace server
             return false;
         }
 
+        public void addpost(string title, string category, string description)
+        {
+            Post p = new Post();
+            p.Title = title;
+            p.Category = category;
+            p.Description = description;
+            postDL.postlist.Add(p);
+
+            p.Title = "";
+            p.Category = "";
+            p.Description = "";
+        }
+
+        public void postingthepost(Post p)
+        {
+            postDL pi = new postDL();
+            pi.posting(p);
+        }
+        public List<Post> getpostlist()
+        {
+            return postDL.postlist;
+        }
+
+        public Post getpost(int postID)
+        {
+            return postDL.postlist[postID];
+        }
     }
 }

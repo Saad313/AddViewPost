@@ -68,6 +68,8 @@
     <Compile Include="admin.cs" />
     <Compile Include="admindl.cs" />
     <Compile Include="MyUtill.cs" />
+    <Compile Include="Post.cs" />
+    <Compile Include="postDL.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

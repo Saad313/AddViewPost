@@ -32,6 +32,18 @@ namespace server
         [OperationContract]
         bool isadmin(string usernmae, string password);
 
+        [OperationContract]
+        void addpost(string title, string category, string description);
+
+        [OperationContract]
+        Post getpost(int postID);
+
+
+        [OperationContract]
+        List<Post> getpostlist();
+
+        [OperationContract]
+        void postingthepost(Post p);
 
 
         // TODO: Add your service operations here
