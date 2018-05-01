@@ -37,6 +37,9 @@ namespace server
             u.Username = username;
             u.Password = password;
             Userdl.user.Add(u);
+
+            u.Username = "";
+            u.Password = "";
             
         }
         public void registeradmin(string username, string password)
@@ -46,6 +49,10 @@ namespace server
             a.Adminname = username;
             a.Adminpassword = password;
             admindl.admin.Add(a);
+
+            a.Adminname = "";
+            a.Adminpassword = "";
+
 
 
         }
@@ -82,7 +89,6 @@ namespace server
             p.Category = category;
             p.Description = description;
             postDL.postlist.Add(p);
-
 
             p.Title = "";
             p.Category = "";
