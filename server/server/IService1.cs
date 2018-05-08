@@ -45,6 +45,9 @@ namespace server
         [OperationContract]
         void postingthepost(Post p);
 
+        [OperationContract]
+        List<Post> getLogPendingPosts();
+
 
         // TODO: Add your service operations here
     }

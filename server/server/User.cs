@@ -11,6 +11,21 @@ namespace server
     {
         private string username;
         private string password;
+        private List<Post> posts = new List<Post>();
+
+        [DataMember]
+        public List<Post> Posts
+        {
+            get
+            { 
+                return posts;
+            }
+            set
+            { 
+                posts = value; 
+            }
+        }
+
 
         [DataMember]
         public string Username

@@ -63,8 +63,9 @@ namespace server
             {
                 if (u.Username == username && u.Password == password)
                 {
-                    return true;
                     MyUtill.log = u;
+                    return true;
+                    
                 }
             }
             return false;
@@ -89,10 +90,9 @@ namespace server
             p.Category = category;
             p.Description = description;
             postDL.postlist.Add(p);
+            MyUtill.log.Posts.Add(p);
 
-            p.Title = "";
-            p.Category = "";
-            p.Description = "";
+           
         }
 
         public void postingthepost(Post p)
@@ -108,6 +108,19 @@ namespace server
         public Post getpost(int postID)
         {
             return postDL.postlist[postID];
+        }
+
+        public List<Post> getLogPendingPosts()
+        {
+            List<Post> temp = new List<Post>();
+            foreach (Post p in MyUtill.log.Posts)
+            {
+                if (!p.Approval)
+                {
+                    temp.Add(p);
+                }
+            }
+            return temp;
         }
     }
 }
