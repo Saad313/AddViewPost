@@ -38,7 +38,6 @@ namespace server
         [OperationContract]
         Post getpost(int postID);
 
-
         [OperationContract]
         List<Post> getpostlist();
 
