@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace client
 {
-    public partial class Admin_Approval : Form
+    public partial class PendingPostUser : Form
     {
-        public Admin_Approval()
+        public PendingPostUser()
         {
             InitializeComponent();
         }
@@ -25,22 +25,25 @@ namespace client
             {
                 localhost.Post post = server.getpost(e.RowIndex, postidspecified);
                 PostDetails pd = new PostDetails();
+                pd.setTitle(post.Title);
+                pd.setCategory(post.Category);
+                pd.setdescription(post.Description);
                 pd.Show();
             }
         }
 
-        public void showPosts()
+        public void showPending()
         {
             localhost.Service1 server = new localhost.Service1();
             BindingSource bs = new BindingSource();
-            bs.DataSource = server.getpostlist();
+            bs.DataSource = server.getLogPendingPosts();
             dataGridView1.DataSource = bs;
 
         }
 
         private void Admin_Approval_Load(object sender, EventArgs e)
         {
-            showPosts();
+            showPending();
         }
     }
 }

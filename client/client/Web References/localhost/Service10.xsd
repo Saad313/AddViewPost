@@ -137,4 +137,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="getLogPendingPosts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLogPendingPostsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getLogPendingPostsResult" nillable="true" type="q6:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

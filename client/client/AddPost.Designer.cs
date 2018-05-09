@@ -70,10 +70,10 @@
             this.lblapprovalrequest.AutoSize = true;
             this.lblapprovalrequest.Location = new System.Drawing.Point(60, 255);
             this.lblapprovalrequest.Name = "lblapprovalrequest";
-            this.lblapprovalrequest.Size = new System.Drawing.Size(92, 13);
+            this.lblapprovalrequest.Size = new System.Drawing.Size(50, 13);
             this.lblapprovalrequest.TabIndex = 3;
             this.lblapprovalrequest.TabStop = true;
-            this.lblapprovalrequest.Text = "Approval Request";
+            this.lblapprovalrequest.Text = "See Post";
             this.lblapprovalrequest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblapprovalrequest_LinkClicked);
             // 
             // cmdaddpost

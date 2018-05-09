@@ -49,6 +49,8 @@ namespace client.localhost {
         
         private System.Threading.SendOrPostCallback postingthepostOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getLogPendingPostsOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -116,6 +118,9 @@ namespace client.localhost {
         
         /// <remarks/>
         public event postingthepostCompletedEventHandler postingthepostCompleted;
+        
+        /// <remarks/>
+        public event getLogPendingPostsCompletedEventHandler getLogPendingPostsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -421,6 +426,35 @@ namespace client.localhost {
             if ((this.postingthepostCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.postingthepostCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getLogPendingPosts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/server")]
+        public Post[] getLogPendingPosts() {
+            object[] results = this.Invoke("getLogPendingPosts", new object[0]);
+            return ((Post[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getLogPendingPostsAsync() {
+            this.getLogPendingPostsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getLogPendingPostsAsync(object userState) {
+            if ((this.getLogPendingPostsOperationCompleted == null)) {
+                this.getLogPendingPostsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetLogPendingPostsOperationCompleted);
+            }
+            this.InvokeAsync("getLogPendingPosts", new object[0], this.getLogPendingPostsOperationCompleted, userState);
+        }
+        
+        private void OngetLogPendingPostsOperationCompleted(object arg) {
+            if ((this.getLogPendingPostsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getLogPendingPostsCompleted(this, new getLogPendingPostsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -750,6 +784,32 @@ namespace client.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
     public delegate void postingthepostCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void getLogPendingPostsCompletedEventHandler(object sender, getLogPendingPostsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getLogPendingPostsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getLogPendingPostsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Post[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Post[])(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

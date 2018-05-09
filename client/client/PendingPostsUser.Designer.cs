@@ -1,6 +1,6 @@
 ﻿namespace client
 {
-    partial class Admin_Approval
+    partial class PendingPostUser
     {
         /// <summary>
         /// Required designer variable.
@@ -51,14 +51,14 @@
             this.lnkDetailView.Text = "Click here";
             this.lnkDetailView.UseColumnTextForLinkValue = true;
             // 
-            // Admin_Approval
+            // PendingPostUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 330);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Admin_Approval";
-            this.Text = "Admin_Approval";
+            this.Name = "PendingPostUser";
+            this.Text = "PendingPostUser";
             this.Load += new System.EventHandler(this.Admin_Approval_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

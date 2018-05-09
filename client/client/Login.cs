@@ -37,7 +37,7 @@ namespace client
             else if (adminvalid)
             {
                 MessageBox.Show("Welcome Admin");
-                Admin_Approval adpage = new Admin_Approval();
+                PendingPostUser adpage = new PendingPostUser();
                 this.Hide();
                 adpage.Show();
             }

@@ -13,6 +13,23 @@ namespace client
     public partial class PostDetails : Form
     {
         private localhost.Post postShow;
+
+        public void setTitle(string title)
+        {
+            txttitleS.Text = title;
+        }
+
+        public void setCategory(string category)
+        {
+            txtcategoryS.Text = category;
+        }
+
+        public void setdescription(string description)
+        {
+            txtdescriptionS.Text = description;
+        }
+
+
         public PostDetails()
         {
             InitializeComponent();
@@ -28,9 +45,6 @@ namespace client
         {
             localhost.Service1 server = new localhost.Service1();
 
-            txttitleS.Text = postShow.Title;
-            txtcategoryS.Text = postShow.Category;
-            txtdescriptionS.Text = postShow.Description;
         }
     }
 }

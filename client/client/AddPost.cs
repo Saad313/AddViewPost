@@ -20,11 +20,7 @@ namespace client
         private void cmdaddpost_Click(object sender, EventArgs e)
         {
             localhost.Service1 server = new localhost.Service1();
-            localhost.Post po = new localhost.Post();
-            po.Title = txtposttitle.Text;
-            po.Category = txtpostcategory.Text;
-            po.Description = txtpostdescription.Text;
-            server.postingthepost(po);
+         
             if (string.IsNullOrWhiteSpace(txtposttitle.Text) && string.IsNullOrWhiteSpace(txtpostcategory.Text) && string.IsNullOrWhiteSpace(txtpostdescription.Text))
             {
                 MessageBox.Show("Empty");
@@ -41,9 +37,9 @@ namespace client
 
         private void lblapprovalrequest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin_Approval adminapproval = new Admin_Approval();
+            PendingPostUser ppu = new PendingPostUser();
             this.Hide();
-            adminapproval.Show();
+            ppu.Show();
         }
       
     }
