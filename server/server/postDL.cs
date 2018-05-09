@@ -8,7 +8,7 @@ namespace server
     public class postDL
     {
         public static List<Post> postlist = new List<Post>();
-        public void posting(Post p)
+        public static void posting(Post p)
         {
             postlist.Add(p);
         }

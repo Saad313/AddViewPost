@@ -9,7 +9,7 @@ namespace server
     [DataContract]
     public class Post
     {
-        private bool approval;
+        private bool approval = false;
 
         [DataMember]
         public bool Approval

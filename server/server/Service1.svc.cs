@@ -37,9 +37,6 @@ namespace server
             u.Username = username;
             u.Password = password;
             Userdl.user.Add(u);
-
-            u.Username = "";
-            u.Password = "";
             
         }
         public void registeradmin(string username, string password)
@@ -49,9 +46,6 @@ namespace server
             a.Adminname = username;
             a.Adminpassword = password;
             admindl.admin.Add(a);
-
-            a.Adminname = "";
-            a.Adminpassword = "";
 
 
 
@@ -97,8 +91,7 @@ namespace server
 
         public void postingthepost(Post p)
         {
-            postDL pi = new postDL();
-            pi.posting(p);
+            postDL.posting(p);
         }
         public List<Post> getpostlist()
         {
