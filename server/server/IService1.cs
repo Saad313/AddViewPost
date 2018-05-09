@@ -22,7 +22,6 @@ namespace server
         [OperationContract]
         void registeruser(string username, string password);
 
-
         [OperationContract]
         void registeradmin(string username, string password);
 
