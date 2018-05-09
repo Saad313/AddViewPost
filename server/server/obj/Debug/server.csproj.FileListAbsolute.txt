@@ -32,3 +32,14 @@ C:\Users\zeeshan\Desktop\AddViewPost\server\server\bin\normnfkd.nlp
 C:\Users\zeeshan\Desktop\AddViewPost\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
 C:\Users\zeeshan\Desktop\AddViewPost\server\server\obj\Debug\server.dll
 C:\Users\zeeshan\Desktop\AddViewPost\server\server\obj\Debug\server.pdb
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\server.dll
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\server.pdb
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\mscorlib.dll
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\normidna.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\normnfc.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\normnfd.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\normnfkc.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\bin\normnfkd.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\obj\Debug\server.csprojResolveAssemblyReference.cache
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\obj\Debug\server.dll
+C:\Users\Wajid Sahib\Desktop\AddViewPost\server\server\obj\Debug\server.pdb

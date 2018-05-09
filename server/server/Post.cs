@@ -10,6 +10,15 @@ namespace server
     public class Post
     {
         private bool approval = false;
+        private string id;
+
+
+        [DataMember]
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         [DataMember]
         public bool Approval

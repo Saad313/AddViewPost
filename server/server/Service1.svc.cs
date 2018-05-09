@@ -80,6 +80,7 @@ namespace server
         public void addpost(string title, string category, string description)
         {
             Post p = new Post();
+            p.Id = postDL.postlist.Count.ToString();
             p.Title = title;
             p.Category = category;
             p.Description = description;
@@ -93,9 +94,17 @@ namespace server
         {
             postDL.posting(p);
         }
-        public List<Post> getpostlist()
+        public List<Post> getPendingpostlist()
         {
-            return postDL.postlist;
+            List<Post> temp = new List<Post>();
+            foreach (Post p in postDL.postlist)
+            {
+                if (!p.Approval)
+                {
+                    temp.Add(p);
+                }
+            }
+            return temp;
         }
 
         public Post getpost(int postID)
@@ -114,6 +123,30 @@ namespace server
                 }
             }
             return temp;
+        }
+
+        public List<Post> getapprovedpost()
+        {
+            List<Post> temp = new List<Post>();
+            foreach (Post p in postDL.postlist)
+            {
+                if (p.Approval)
+                {
+                    temp.Add(p);
+                }
+            }
+            return temp;
+        }
+
+        public void approvePost(string id)
+        {
+            foreach (Post p in postDL.postlist)
+            {
+                if (p.Id == id)
+                {
+                    p.Approval = true;
+                }
+            }
         }
     }
 }

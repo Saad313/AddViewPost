@@ -39,13 +39,19 @@ namespace server
         Post getpost(int postID);
 
         [OperationContract]
-        List<Post> getpostlist();
+        List<Post> getPendingpostlist();
 
         [OperationContract]
         void postingthepost(Post p);
 
         [OperationContract]
         List<Post> getLogPendingPosts();
+
+        [OperationContract]
+        List<Post> getapprovedpost();
+
+        [OperationContract]
+        void approvePost(string id);
 
 
         // TODO: Add your service operations here
