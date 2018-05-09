@@ -54,17 +54,29 @@
     <Compile Include="AddPost.Designer.cs">
       <DependentUpon>AddPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApprovedPosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovedPosts.Designer.cs">
+      <DependentUpon>ApprovedPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingPostsAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingPostsAdmin.Designer.cs">
+      <DependentUpon>PendingPostsAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="PendingPostsUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PendingPostsUser.Designer.cs">
       <DependentUpon>PendingPostsUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -88,11 +100,17 @@
     <EmbeddedResource Include="AddPost.resx">
       <DependentUpon>AddPost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApprovedPosts.resx">
+      <DependentUpon>ApprovedPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingPostsAdmin.resx">
+      <DependentUpon>PendingPostsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PendingPostsUser.resx">
       <DependentUpon>PendingPostsUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

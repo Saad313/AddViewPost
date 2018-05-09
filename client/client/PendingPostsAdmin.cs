@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace client
 {
-    public partial class PendingPostUser : Form
+    public partial class PendingPostsAdmin : Form
     {
-        public PendingPostUser()
+        public PendingPostsAdmin()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgPendingAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             localhost.Service1 server = new localhost.Service1();
             bool postidspecified = true;
-            if(e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0)
             {
                 localhost.Post post = server.getpost(e.RowIndex, postidspecified);
                 PostDetails pd = new PostDetails();
@@ -32,18 +32,29 @@ namespace client
             }
         }
 
-        public void showPending()
+        public void showPostPend()
         {
             localhost.Service1 server = new localhost.Service1();
+            localhost.Post PRO = new localhost.Post();
             BindingSource bs = new BindingSource();
-            bs.DataSource = server.getLogPendingPosts();
-            dataGridView1.DataSource = bs;
-
+            bs.DataSource = server.getPendingpostlist();
+            dgPendingAdmin.DataSource = bs;
+          
         }
 
-        private void Admin_Approval_Load(object sender, EventArgs e)
+        private void PendingPostsAdmin_Load(object sender, EventArgs e)
         {
-            showPending();
+            showPostPend();
+        }
+
+        private void cmdapprove_Click(object sender, EventArgs e)
+        {
+            localhost.Service1 server = new localhost.Service1();
+            int selectedrowindex = dgPendingAdmin.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgPendingAdmin.Rows[selectedrowindex];
+            string i = selectedRow.Cells[5].Value.ToString();
+            server.approvePost(i);
+            showPostPend();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,23 +64,18 @@ namespace client
             R.Show();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void approvedPostsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddPost apo = new AddPost();
+            ApprovedPosts ap = new ApprovedPosts();
             this.Hide();
-            apo.Show();
+            ap.Show();
         }
 
-        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login L = new Login();
             this.Hide();
             L.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

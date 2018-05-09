@@ -20,7 +20,7 @@ namespace client
         private void cmdaddpost_Click(object sender, EventArgs e)
         {
             localhost.Service1 server = new localhost.Service1();
-         
+            server.addpost(txtposttitle.Text, txtpostcategory.Text, txtpostdescription.Text);
             if (string.IsNullOrWhiteSpace(txtposttitle.Text) && string.IsNullOrWhiteSpace(txtpostcategory.Text) && string.IsNullOrWhiteSpace(txtpostdescription.Text))
             {
                 MessageBox.Show("Empty");
@@ -40,6 +40,32 @@ namespace client
             PendingPostUser ppu = new PendingPostUser();
             this.Hide();
             ppu.Show();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registration R = new Registration();
+            this.Hide();
+            R.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PendingPostUser ppu = new PendingPostUser();
+            this.Hide();
+            ppu.Show();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Login L = new Login();
+            this.Hide();
+            L.Show();
+        }
+
+        private void AddPost_Load(object sender, EventArgs e)
+        {
+
         }
       
     }

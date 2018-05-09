@@ -37,7 +37,7 @@ namespace client
             else if (adminvalid)
             {
                 MessageBox.Show("Welcome Admin");
-                PendingPostUser adpage = new PendingPostUser();
+                PendingPostsAdmin adpage = new PendingPostsAdmin();
                 this.Hide();
                 adpage.Show();
             }
@@ -50,6 +50,18 @@ namespace client
         }
 
         private void lblregister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registration R = new Registration();
+            this.Hide();
+            R.Show();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Your Are On LOGIN");
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Registration R = new Registration();
             this.Hide();

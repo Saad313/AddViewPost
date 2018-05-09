@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace client
 {
-    public partial class PendingPostUser : Form
+    public partial class ApprovedPosts : Form
     {
-        public PendingPostUser()
+        public ApprovedPosts()
         {
             InitializeComponent();
+        }
+
+        private void ApprovedPosts_Load(object sender, EventArgs e)
+        {
+            approvedPosts();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             localhost.Service1 server = new localhost.Service1();
             bool postidspecified = true;
-            if(e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0)
             {
                 localhost.Post post = server.getpost(e.RowIndex, postidspecified);
                 PostDetails pd = new PostDetails();
@@ -32,18 +37,13 @@ namespace client
             }
         }
 
-        public void showPending()
+        public void approvedPosts()
         {
             localhost.Service1 server = new localhost.Service1();
+            localhost.Post PRO = new localhost.Post();
             BindingSource bs = new BindingSource();
-            bs.DataSource = server.getLogPendingPosts();
-            dataGridView1.DataSource = bs;
-
-        }
-
-        private void Admin_Approval_Load(object sender, EventArgs e)
-        {
-            showPending();
+            bs.DataSource = server.getapprovedpost();
+            dgapproved.DataSource = bs;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,23 +53,18 @@ namespace client
             R.Show();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pendingPostsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddPost apo = new AddPost();
+            PendingPostsAdmin ppa = new PendingPostsAdmin();
             this.Hide();
-            apo.Show();
+            ppa.Show();
         }
 
-        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login L = new Login();
             this.Hide();
             L.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

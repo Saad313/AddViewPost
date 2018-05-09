@@ -113,22 +113,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getpostlist">
+  <xs:element name="getPendingpostlist">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getpostlistResponse">
+  <xs:element name="getPendingpostlistResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getpostlistResult" nillable="true" type="q4:ArrayOfPost" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getPendingpostlistResult" nillable="true" type="q4:ArrayOfPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getapprovedpost">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getapprovedpostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getapprovedpostResult" nillable="true" type="q5:ArrayOfPost" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="postingthepost">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="p" nillable="true" type="q5:Post" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="p" nillable="true" type="q6:Post" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -145,8 +157,20 @@
   <xs:element name="getLogPendingPostsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getLogPendingPostsResult" nillable="true" type="q6:ArrayOfPost" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/server" minOccurs="0" name="getLogPendingPostsResult" nillable="true" type="q7:ArrayOfPost" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approvePost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approvePostResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

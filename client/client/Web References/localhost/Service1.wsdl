@@ -55,11 +55,17 @@
   <wsdl:message name="IService1_getpost_OutputMessage">
     <wsdl:part name="parameters" element="tns:getpostResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getpostlist_InputMessage">
-    <wsdl:part name="parameters" element="tns:getpostlist" />
+  <wsdl:message name="IService1_getPendingpostlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPendingpostlist" />
   </wsdl:message>
-  <wsdl:message name="IService1_getpostlist_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getpostlistResponse" />
+  <wsdl:message name="IService1_getPendingpostlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPendingpostlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getapprovedpost_InputMessage">
+    <wsdl:part name="parameters" element="tns:getapprovedpost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getapprovedpost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getapprovedpostResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_postingthepost_InputMessage">
     <wsdl:part name="parameters" element="tns:postingthepost" />
@@ -72,6 +78,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getLogPendingPosts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getLogPendingPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approvePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:approvePost" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approvePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:approvePostResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -106,9 +118,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getpost" message="tns:IService1_getpost_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getpostResponse" message="tns:IService1_getpost_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getpostlist">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getpostlist" message="tns:IService1_getpostlist_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getpostlistResponse" message="tns:IService1_getpostlist_OutputMessage" />
+    <wsdl:operation name="getPendingpostlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPendingpostlist" message="tns:IService1_getPendingpostlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPendingpostlistResponse" message="tns:IService1_getPendingpostlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getapprovedpost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getapprovedpost" message="tns:IService1_getapprovedpost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getapprovedpostResponse" message="tns:IService1_getapprovedpost_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="postingthepost">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/postingthepost" message="tns:IService1_postingthepost_InputMessage" />
@@ -117,6 +133,10 @@
     <wsdl:operation name="getLogPendingPosts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLogPendingPosts" message="tns:IService1_getLogPendingPosts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLogPendingPostsResponse" message="tns:IService1_getLogPendingPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="approvePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/approvePost" message="tns:IService1_approvePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/approvePostResponse" message="tns:IService1_approvePost_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -193,8 +213,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getpostlist">
-      <soap:operation soapAction="http://tempuri.org/IService1/getpostlist" style="document" />
+    <wsdl:operation name="getPendingpostlist">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPendingpostlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getapprovedpost">
+      <soap:operation soapAction="http://tempuri.org/IService1/getapprovedpost" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -213,6 +242,15 @@
     </wsdl:operation>
     <wsdl:operation name="getLogPendingPosts">
       <soap:operation soapAction="http://tempuri.org/IService1/getLogPendingPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approvePost">
+      <soap:operation soapAction="http://tempuri.org/IService1/approvePost" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

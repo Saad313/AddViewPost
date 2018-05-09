@@ -53,3 +53,26 @@ C:\Users\zeeshan\Desktop\AddViewPost\client\client\bin\Debug\normnfc.nlp
 C:\Users\zeeshan\Desktop\AddViewPost\client\client\bin\Debug\normnfd.nlp
 C:\Users\zeeshan\Desktop\AddViewPost\client\client\bin\Debug\normnfkc.nlp
 C:\Users\zeeshan\Desktop\AddViewPost\client\client\bin\Debug\normnfkd.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\client.exe.config
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.exe
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.pdb
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\client.exe
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\client.pdb
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\mscorlib.dll
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\System.Net.Http.dll
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\System.Net.Http.xml
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\normidna.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\normnfc.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\normnfd.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\normnfkc.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\bin\Debug\normnfkd.nlp
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.csprojResolveAssemblyReference.cache
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.AddPost.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.ApprovedPosts.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.PendingPostsAdmin.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.PendingPostUser.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.Registration.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.Login.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.PostDetails.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.Properties.Resources.resources
+C:\Users\Wajid Sahib\Desktop\AddViewPost\client\client\obj\Debug\client.csproj.GenerateResource.Cache

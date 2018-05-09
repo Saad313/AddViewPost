@@ -1,6 +1,6 @@
 ﻿namespace client
 {
-    partial class PendingPostUser
+    partial class ApprovedPosts
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lnkDetailView = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dgapproved = new System.Windows.Forms.DataGridView();
+            this.Detail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingPostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgapproved)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgapproved
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lnkDetailView});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 40);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(423, 278);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgapproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgapproved.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Detail});
+            this.dgapproved.Location = new System.Drawing.Point(12, 73);
+            this.dgapproved.Name = "dgapproved";
+            this.dgapproved.Size = new System.Drawing.Size(349, 180);
+            this.dgapproved.TabIndex = 0;
+            this.dgapproved.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // lnkDetailView
+            // Detail
             // 
-            this.lnkDetailView.HeaderText = "Detail";
-            this.lnkDetailView.Name = "lnkDetailView";
-            this.lnkDetailView.Text = "Click here";
-            this.lnkDetailView.UseColumnTextForLinkValue = true;
+            this.Detail.HeaderText = "Detail";
+            this.Detail.Name = "Detail";
+            this.Detail.Text = "Click Here";
+            this.Detail.UseColumnTextForLinkValue = true;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
-            this.logoutToolStripMenuItem,
-            this.logoutToolStripMenuItem1});
+            this.pendingPostsToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(447, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(373, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // homeToolStripMenuItem
             // 
@@ -76,32 +75,32 @@
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
+            // pendingPostsToolStripMenuItem
+            // 
+            this.pendingPostsToolStripMenuItem.Name = "pendingPostsToolStripMenuItem";
+            this.pendingPostsToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.pendingPostsToolStripMenuItem.Text = "PendingPosts";
+            this.pendingPostsToolStripMenuItem.Click += new System.EventHandler(this.pendingPostsToolStripMenuItem_Click);
+            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.logoutToolStripMenuItem.Text = "AddPost";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // logoutToolStripMenuItem1
-            // 
-            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem1.Text = "Logout";
-            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
-            // 
-            // PendingPostUser
+            // ApprovedPosts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 330);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(373, 274);
+            this.Controls.Add(this.dgapproved);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "PendingPostUser";
-            this.Text = "PendingPostUser";
-            this.Load += new System.EventHandler(this.Admin_Approval_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "ApprovedPosts";
+            this.Text = "ApprovedPosts";
+            this.Load += new System.EventHandler(this.ApprovedPosts_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgapproved)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -111,11 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewLinkColumn lnkDetailView;
+        private System.Windows.Forms.DataGridView dgapproved;
+        private System.Windows.Forms.DataGridViewLinkColumn Detail;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendingPostsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
     }
 }

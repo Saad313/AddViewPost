@@ -45,11 +45,15 @@ namespace client.localhost {
         
         private System.Threading.SendOrPostCallback getpostOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getpostlistOperationCompleted;
+        private System.Threading.SendOrPostCallback getPendingpostlistOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getapprovedpostOperationCompleted;
         
         private System.Threading.SendOrPostCallback postingthepostOperationCompleted;
         
         private System.Threading.SendOrPostCallback getLogPendingPostsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback approvePostOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -114,13 +118,19 @@ namespace client.localhost {
         public event getpostCompletedEventHandler getpostCompleted;
         
         /// <remarks/>
-        public event getpostlistCompletedEventHandler getpostlistCompleted;
+        public event getPendingpostlistCompletedEventHandler getPendingpostlistCompleted;
+        
+        /// <remarks/>
+        public event getapprovedpostCompletedEventHandler getapprovedpostCompleted;
         
         /// <remarks/>
         public event postingthepostCompletedEventHandler postingthepostCompleted;
         
         /// <remarks/>
         public event getLogPendingPostsCompletedEventHandler getLogPendingPostsCompleted;
+        
+        /// <remarks/>
+        public event approvePostCompletedEventHandler approvePostCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -373,31 +383,60 @@ namespace client.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getpostlist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getPendingpostlist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/server")]
-        public Post[] getpostlist() {
-            object[] results = this.Invoke("getpostlist", new object[0]);
+        public Post[] getPendingpostlist() {
+            object[] results = this.Invoke("getPendingpostlist", new object[0]);
             return ((Post[])(results[0]));
         }
         
         /// <remarks/>
-        public void getpostlistAsync() {
-            this.getpostlistAsync(null);
+        public void getPendingpostlistAsync() {
+            this.getPendingpostlistAsync(null);
         }
         
         /// <remarks/>
-        public void getpostlistAsync(object userState) {
-            if ((this.getpostlistOperationCompleted == null)) {
-                this.getpostlistOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetpostlistOperationCompleted);
+        public void getPendingpostlistAsync(object userState) {
+            if ((this.getPendingpostlistOperationCompleted == null)) {
+                this.getPendingpostlistOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPendingpostlistOperationCompleted);
             }
-            this.InvokeAsync("getpostlist", new object[0], this.getpostlistOperationCompleted, userState);
+            this.InvokeAsync("getPendingpostlist", new object[0], this.getPendingpostlistOperationCompleted, userState);
         }
         
-        private void OngetpostlistOperationCompleted(object arg) {
-            if ((this.getpostlistCompleted != null)) {
+        private void OngetPendingpostlistOperationCompleted(object arg) {
+            if ((this.getPendingpostlistCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getpostlistCompleted(this, new getpostlistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getPendingpostlistCompleted(this, new getPendingpostlistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getapprovedpost", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/server")]
+        public Post[] getapprovedpost() {
+            object[] results = this.Invoke("getapprovedpost", new object[0]);
+            return ((Post[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getapprovedpostAsync() {
+            this.getapprovedpostAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getapprovedpostAsync(object userState) {
+            if ((this.getapprovedpostOperationCompleted == null)) {
+                this.getapprovedpostOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetapprovedpostOperationCompleted);
+            }
+            this.InvokeAsync("getapprovedpost", new object[0], this.getapprovedpostOperationCompleted, userState);
+        }
+        
+        private void OngetapprovedpostOperationCompleted(object arg) {
+            if ((this.getapprovedpostCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getapprovedpostCompleted(this, new getapprovedpostCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -455,6 +494,34 @@ namespace client.localhost {
             if ((this.getLogPendingPostsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getLogPendingPostsCompleted(this, new getLogPendingPostsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/approvePost", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void approvePost([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string id) {
+            this.Invoke("approvePost", new object[] {
+                        id});
+        }
+        
+        /// <remarks/>
+        public void approvePostAsync(string id) {
+            this.approvePostAsync(id, null);
+        }
+        
+        /// <remarks/>
+        public void approvePostAsync(string id, object userState) {
+            if ((this.approvePostOperationCompleted == null)) {
+                this.approvePostOperationCompleted = new System.Threading.SendOrPostCallback(this.OnapprovePostOperationCompleted);
+            }
+            this.InvokeAsync("approvePost", new object[] {
+                        id}, this.approvePostOperationCompleted, userState);
+        }
+        
+        private void OnapprovePostOperationCompleted(object arg) {
+            if ((this.approvePostCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.approvePostCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -540,6 +607,8 @@ namespace client.localhost {
         
         private string descriptionField;
         
+        private string idField;
+        
         private string titleField;
         
         /// <remarks/>
@@ -582,6 +651,17 @@ namespace client.localhost {
             }
             set {
                 this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
             }
         }
         
@@ -757,17 +837,43 @@ namespace client.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    public delegate void getpostlistCompletedEventHandler(object sender, getpostlistCompletedEventArgs e);
+    public delegate void getPendingpostlistCompletedEventHandler(object sender, getPendingpostlistCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getpostlistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getPendingpostlistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getpostlistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getPendingpostlistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Post[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Post[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void getapprovedpostCompletedEventHandler(object sender, getapprovedpostCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getapprovedpostCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getapprovedpostCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -810,6 +916,10 @@ namespace client.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void approvePostCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

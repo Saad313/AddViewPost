@@ -64,7 +64,19 @@ namespace client
 
         private void Registration_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login R = new Login();
+            this.Hide();
+            R.Show();
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You Are At Registerain");
         }
     }
 }
