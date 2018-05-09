@@ -25,6 +25,7 @@ namespace server
         [OperationContract]
         void registeradmin(string username, string password);
 
+
         [OperationContract]
         bool Login_user(string username, string password);
 
